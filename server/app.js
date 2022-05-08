@@ -1,13 +1,12 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require("cors");
-const bodyParser = require("body-parser");
 
 const app = express();
 
 //Middlewares
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: false}))
+app.use(express.json())
 
 //Paths
 const auth = require('./routes/auth/auth.js');

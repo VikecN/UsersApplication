@@ -1,17 +1,12 @@
 const express = require('express');
+const {Login, Logout, Register} = require("../../controllers/auth/auth.js")
 
 var router = express.Router();
 
-router.get("/login", (req, res) => {
-    res.send("Login Page.");
-});
+router.get("/login", Login);
 
-router.get("/logout", (req, res) => {
-    res.redirect('/login');
-});
+router.get("/logout", Logout);
 
-router.get("/register", (req, res) => {
-    res.send("Register Page.");
-});
+router.get("/register", Register);
 
 module.exports = router
